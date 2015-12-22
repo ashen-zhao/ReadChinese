@@ -38,7 +38,7 @@
         if (sender.tag == 100) {
             self.txtShowPath.placeholderString = path;
         } else {
-            self.txtShowOutPath.placeholderString = [path stringByAppendingPathComponent:@"myCinese.txt"];
+            self.txtShowOutPath.placeholderString = [path stringByAppendingPathComponent:@"chinese.txt"];
         }
     }
 }
@@ -69,7 +69,7 @@
     }
     NSEnumerator *fileenum;
     fileenum = [files objectEnumerator];
-    
+    NSInteger chineseCount = 0;
     while (filename = [fileenum nextObject]) {
         
         NSString *str=[NSString stringWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", home, filename] encoding:NSUTF8StringEncoding error:nil];
@@ -95,9 +95,10 @@
             
             isHasFileName = YES;
             
-            if ([dataMSet containsObject:mStr]) {
+            if ([dataMSet containsObject:mStr]) {  //加上这句除去，重复出现的字符串
                 continue;
             }
+            chineseCount++;
             [dataMSet addObject:mStr];
             isHasChineseInFile = YES;
         }
@@ -106,6 +107,7 @@
         }
     }
 
+    NSLog(@"共有 %ld 个中文字符串", chineseCount);
     for (NSString *txt in dataMSet) {
         if ([txt containsString:@"/*"] && [txt containsString:@"*/"]) {
             [dataMstr appendString:txt];
