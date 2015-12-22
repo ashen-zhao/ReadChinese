@@ -748,19 +748,19 @@
                                 </connections>
                             </button>
                             <scrollView borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ux9-mr-W0u">
-                                <rect key="frame" x="20" y="42" width="660" height="310"/>
+                                <rect key="frame" x="20" y="42" width="660" height="293"/>
                                 <clipView key="contentView" id="euw-pb-Ayw">
-                                    <rect key="frame" x="2" y="2" width="656" height="306"/>
+                                    <rect key="frame" x="2" y="2" width="656" height="289"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="sW7-4X-xdq">
-                                            <rect key="frame" x="0.0" y="0.0" width="656" height="306"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="656" height="289"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="656" height="306"/>
+                                            <size key="minSize" width="656" height="289"/>
                                             <size key="maxSize" width="678" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="656" height="306"/>
+                                            <size key="minSize" width="656" height="289"/>
                                             <size key="maxSize" width="678" height="10000000"/>
                                         </textView>
                                     </subviews>
@@ -771,12 +771,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="GWr-T2-ntR">
-                                    <rect key="frame" x="642" y="2" width="16" height="306"/>
+                                    <rect key="frame" x="642" y="2" width="16" height="289"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="baO-zw-g7h">
-                                <rect key="frame" x="74" y="388" width="547" height="35"/>
+                                <rect key="frame" x="74" y="371" width="547" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="j6l-k4-q97"/>
                                 </constraints>
@@ -786,6 +786,46 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="exportAction:" target="XfG-lQ-9wD" id="ouQ-DD-FUo"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="y72-Q7-Ivt">
+                                <rect key="frame" x="78" y="417" width="140" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="lUT-Ge-DEY"/>
+                                    <constraint firstAttribute="width" constant="136" id="t4l-W7-4Bk"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="去除所有重复字符串" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="wVg-zS-hsI">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="deleteInAllFiles:" target="XfG-lQ-9wD" id="47y-xe-Gzm"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dOt-AI-Ebe">
+                                <rect key="frame" x="18" y="419" width="69" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="ib7-Lt-QLX"/>
+                                    <constraint firstAttribute="width" constant="65" id="yLM-Nb-nJ7"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="重复规则：" id="pj1-4K-wvU">
+                                    <font key="font" size="13" name="STHeitiSC-Light"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="PTq-tW-yeo">
+                                <rect key="frame" x="250" y="417" width="270" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="8ox-Jl-evr"/>
+                                    <constraint firstAttribute="height" constant="16" id="MwW-MF-IEj"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="去除本文件重复，保留与其他文件中重复的" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="6C3-qg-qUh">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="deleteInOneFile:" target="XfG-lQ-9wD" id="rID-lF-1EY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -799,11 +839,17 @@
                             <constraint firstItem="8Um-Eo-OsS" firstAttribute="top" secondItem="r6h-1u-lqi" secondAttribute="bottom" constant="20" id="BNw-n6-3jO"/>
                             <constraint firstAttribute="trailing" secondItem="9Lq-Gk-6qn" secondAttribute="trailing" constant="20" id="Bxm-rc-19d"/>
                             <constraint firstItem="tF2-uS-4km" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="DRJ-d8-IYz"/>
-                            <constraint firstItem="baO-zw-g7h" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="33" id="HUx-AE-LrH"/>
+                            <constraint firstItem="dOt-AI-Ebe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Flq-dc-mad"/>
+                            <constraint firstItem="baO-zw-g7h" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="50" id="HUx-AE-LrH"/>
+                            <constraint firstItem="y72-Q7-Ivt" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="17" id="Khz-Gz-JKE"/>
                             <constraint firstAttribute="trailing" secondItem="baO-zw-g7h" secondAttribute="trailing" constant="85" id="Kmj-vd-ba1"/>
+                            <constraint firstItem="PTq-tW-yeo" firstAttribute="leading" secondItem="y72-Q7-Ivt" secondAttribute="trailing" constant="36" id="L62-1Q-hqI"/>
+                            <constraint firstItem="PTq-tW-yeo" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="17" id="O0s-t1-N8S"/>
                             <constraint firstItem="ux9-mr-W0u" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ObU-G1-O5N"/>
+                            <constraint firstItem="dOt-AI-Ebe" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="16" id="U1Y-Z4-Hh3"/>
                             <constraint firstItem="r6h-1u-lqi" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="aQI-vF-iXx"/>
                             <constraint firstItem="9Lq-Gk-6qn" firstAttribute="leading" secondItem="8Um-Eo-OsS" secondAttribute="trailing" constant="10" id="ch6-a9-yyu"/>
+                            <constraint firstItem="y72-Q7-Ivt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="80" id="g4I-if-roE"/>
                             <constraint firstAttribute="trailing" secondItem="AB3-VF-ByU" secondAttribute="trailing" constant="20" id="gcm-46-om5"/>
                             <constraint firstItem="AB3-VF-ByU" firstAttribute="leading" secondItem="r6h-1u-lqi" secondAttribute="trailing" constant="10" id="gps-93-VBR"/>
                             <constraint firstItem="tF2-uS-4km" firstAttribute="top" secondItem="r6h-1u-lqi" secondAttribute="bottom" constant="20" id="mAM-hV-6ib"/>
@@ -814,6 +860,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteInAllFiles" destination="y72-Q7-Ivt" id="6cU-UN-5G9"/>
+                        <outlet property="deleteInOneFile" destination="PTq-tW-yeo" id="swr-lz-eGP"/>
                         <outlet property="txtShowChinese" destination="ux9-mr-W0u" id="GyR-Oo-cll"/>
                         <outlet property="txtShowOutPath" destination="8Um-Eo-OsS" id="5B9-kC-itm"/>
                         <outlet property="txtShowPath" destination="r6h-1u-lqi" id="okY-9S-bvq"/>
