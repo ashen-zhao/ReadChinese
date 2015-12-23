@@ -15,8 +15,7 @@
 @property (weak) IBOutlet NSScrollView *txtShowChinese;
 @property (weak) IBOutlet NSButton *deleteInOneFile;
 @property (weak) IBOutlet NSButton *deleteInAllFiles;
-
-@property (nonatomic, strong)     NSTextView *txtView;
+@property (nonatomic, strong)  NSTextView *txtView;
 
 @end
 
@@ -32,6 +31,7 @@
     [super setRepresentedObject:representedObject];
 }
 
+#pragma mark - action
 - (IBAction)deleteInAllFiles:(NSButton *)sender {
     self.deleteInOneFile.state = 0;
 }
@@ -59,6 +59,13 @@
 - (IBAction)exportAction:(id)sender {
     [self readFiles:self.txtShowPath.placeholderString];
 }
+
+#pragma mark - Method
+- (void)showTxt:(NSMutableString *)txt {
+    self.txtView.string = txt;
+    self.txtShowChinese.documentView = _txtView;
+}
+
 
 - (void)readFiles:(NSString *)str {
     if (self.txtShowPath.placeholderString.length == 0 || self.txtShowOutPath.placeholderString.length == 0) {
@@ -90,12 +97,12 @@
         NSString *str=[NSString stringWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", home, filename] encoding:NSUTF8StringEncoding error:nil];
         
         NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"@\"[^\"]*[\\u4E00-\\u9FA5]+[^\"\\n]*?\"" options:NSRegularExpressionCaseInsensitive error:nil];
-    
+        
         NSArray *matches = [regular matchesInString:str
                                             options:0
                                               range:NSMakeRange(0, str.length)];
         
-
+        
         NSString *newFileName =  [NSString stringWithFormat:@"\n/*\n%@\n*/", [[filename componentsSeparatedByString:@"/"] lastObject]];
         BOOL isHasFileName = NO;
         BOOL isHasChineseInFile = NO;
@@ -108,7 +115,7 @@
             NSRange isOnlyAt = NSMakeRange(0, 1);
             mStr = [mStr stringByReplacingCharactersInRange:isOnlyAt withString:@""];
             isHasFileName = YES;
-        
+            
             if (self.deleteInOneFile.state) {
                 if ([dataInOneFile containsObject:mStr]) { //除去本文件中重复出现的字符串
                     continue;
@@ -146,12 +153,6 @@
     [finalStr appendString:dataMstr];
     [self showTxt:finalStr];
 }
-
-- (void)showTxt:(NSMutableString *)txt {
-    self.txtView.string = txt;
-    self.txtShowChinese.documentView = _txtView;
-}
-
 
 #pragma mark - getter / setter
 - (NSTextView *)txtView {
