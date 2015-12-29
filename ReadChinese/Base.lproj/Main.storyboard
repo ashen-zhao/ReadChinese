@@ -828,6 +828,17 @@
                                     <action selector="deleteInOneFile:" target="XfG-lQ-9wD" id="rID-lF-1EY"/>
                                 </connections>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="2X0-ky-X1i">
+                                <rect key="frame" x="544" y="417" width="104" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="XFH-Fj-qVZ"/>
+                                    <constraint firstAttribute="height" constant="16" id="giX-Gf-zu0"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="导出为繁体" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Oc7-i1-TeT">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name="STHeitiSC-Light"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ux9-mr-W0u" secondAttribute="bottom" constant="42" id="2D6-JS-zCt"/>
@@ -845,6 +856,7 @@
                             <constraint firstAttribute="trailing" secondItem="baO-zw-g7h" secondAttribute="trailing" constant="85" id="Kmj-vd-ba1"/>
                             <constraint firstItem="PTq-tW-yeo" firstAttribute="leading" secondItem="y72-Q7-Ivt" secondAttribute="trailing" constant="36" id="L62-1Q-hqI"/>
                             <constraint firstItem="PTq-tW-yeo" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="17" id="O0s-t1-N8S"/>
+                            <constraint firstItem="2X0-ky-X1i" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="17" id="O3O-Gs-55F"/>
                             <constraint firstItem="ux9-mr-W0u" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ObU-G1-O5N"/>
                             <constraint firstItem="dOt-AI-Ebe" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="16" id="U1Y-Z4-Hh3"/>
                             <constraint firstItem="r6h-1u-lqi" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="aQI-vF-iXx"/>
@@ -852,6 +864,7 @@
                             <constraint firstItem="y72-Q7-Ivt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="80" id="g4I-if-roE"/>
                             <constraint firstAttribute="trailing" secondItem="AB3-VF-ByU" secondAttribute="trailing" constant="20" id="gcm-46-om5"/>
                             <constraint firstItem="AB3-VF-ByU" firstAttribute="leading" secondItem="r6h-1u-lqi" secondAttribute="trailing" constant="10" id="gps-93-VBR"/>
+                            <constraint firstItem="2X0-ky-X1i" firstAttribute="leading" secondItem="PTq-tW-yeo" secondAttribute="trailing" constant="28" id="lT4-62-4iB"/>
                             <constraint firstItem="tF2-uS-4km" firstAttribute="top" secondItem="r6h-1u-lqi" secondAttribute="bottom" constant="20" id="mAM-hV-6ib"/>
                             <constraint firstItem="AB3-VF-ByU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="oX2-2i-dQu"/>
                             <constraint firstAttribute="trailing" secondItem="ux9-mr-W0u" secondAttribute="trailing" constant="20" id="pMX-za-cBC"/>
@@ -862,6 +875,7 @@
                     <connections>
                         <outlet property="deleteInAllFiles" destination="y72-Q7-Ivt" id="6cU-UN-5G9"/>
                         <outlet property="deleteInOneFile" destination="PTq-tW-yeo" id="swr-lz-eGP"/>
+                        <outlet property="tradition" destination="2X0-ky-X1i" id="5h3-IK-ikL"/>
                         <outlet property="txtShowChinese" destination="ux9-mr-W0u" id="GyR-Oo-cll"/>
                         <outlet property="txtShowOutPath" destination="8Um-Eo-OsS" id="5B9-kC-itm"/>
                         <outlet property="txtShowPath" destination="r6h-1u-lqi" id="okY-9S-bvq"/>

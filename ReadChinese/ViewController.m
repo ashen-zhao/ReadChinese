@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ASConvertor.h"
 
 @interface ViewController()
 
@@ -15,6 +16,8 @@
 @property (weak) IBOutlet NSScrollView *txtShowChinese;
 @property (weak) IBOutlet NSButton *deleteInOneFile;
 @property (weak) IBOutlet NSButton *deleteInAllFiles;
+@property (weak) IBOutlet NSButton *tradition;
+
 @property (nonatomic, strong)  NSTextView *txtView;
 
 @end
@@ -83,7 +86,7 @@
     
     NSString *filename ;
     while (filename = [direnum nextObject]) {
-        if ([[filename pathExtension] isEqualToString:@"m"]) {
+        if ([[filename pathExtension] isEqualToString:@"plist"]) {
             [files addObject: filename];
         }
     }
@@ -143,7 +146,7 @@
             [dataMstr appendString:@"\n"];
             continue;
         }
-        [dataMstr appendString:[[txt stringByAppendingString:@"="] stringByAppendingString:txt]];
+        [dataMstr appendString:[[txt stringByAppendingString:@"="] stringByAppendingString:                self.tradition.state ? [[ASConvertor getInstance] s2t:txt] : txt]];
         [dataMstr appendString:@";"];
         [dataMstr appendString:@"\n"];
     }
