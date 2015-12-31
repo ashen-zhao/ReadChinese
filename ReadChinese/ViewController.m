@@ -86,7 +86,10 @@
     
     NSString *filename ;
     while (filename = [direnum nextObject]) {
-        if ([[filename pathExtension] isEqualToString:@"plist"]) {
+        if ([[filename pathExtension] isEqualToString:@"m"]) {
+            [files addObject: filename];
+        }
+        if ([[filename pathExtension] isEqualToString:@"h"]) {
             [files addObject: filename];
         }
     }
@@ -174,6 +177,7 @@
     [_txtView setEditable:NO];
     return _txtView;
 }
+
 
 
 @end

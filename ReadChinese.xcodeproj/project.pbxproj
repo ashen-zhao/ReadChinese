@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C8288161C3257FD00D82F1B /* ASConvertor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8288141C3257FD00D82F1B /* ASConvertor.m */; };
-		8C8288171C3257FD00D82F1B /* ts.tab in Resources */ = {isa = PBXBuildFile; fileRef = 8C8288151C3257FD00D82F1B /* ts.tab */; };
 		8C8288191C32681E00D82F1B /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8288181C32681E00D82F1B /* screenshot.png */; };
+		8C8288321C34D00E00D82F1B /* ASConvertor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8288301C34D00E00D82F1B /* ASConvertor.m */; };
+		8C8288331C34D00E00D82F1B /* ts.tab in Resources */ = {isa = PBXBuildFile; fileRef = 8C8288311C34D00E00D82F1B /* ts.tab */; };
 		8C87AEA71C1982BA00AA8519 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C87AEA61C1982BA00AA8519 /* AppDelegate.m */; };
 		8C87AEAA1C1982BA00AA8519 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C87AEA91C1982BA00AA8519 /* main.m */; };
 		8C87AEAD1C1982BA00AA8519 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C87AEAC1C1982BA00AA8519 /* ViewController.m */; };
@@ -18,10 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8C8288131C3257FD00D82F1B /* ASConvertor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASConvertor.h; sourceTree = "<group>"; };
-		8C8288141C3257FD00D82F1B /* ASConvertor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASConvertor.m; sourceTree = "<group>"; };
-		8C8288151C3257FD00D82F1B /* ts.tab */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ts.tab; sourceTree = "<group>"; };
 		8C8288181C32681E00D82F1B /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		8C82882F1C34D00E00D82F1B /* ASConvertor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASConvertor.h; sourceTree = "<group>"; };
+		8C8288301C34D00E00D82F1B /* ASConvertor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASConvertor.m; sourceTree = "<group>"; };
+		8C8288311C34D00E00D82F1B /* ts.tab */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ts.tab; sourceTree = "<group>"; };
 		8C87AEA21C1982BA00AA8519 /* ReadChinese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadChinese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C87AEA51C1982BA00AA8519 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8C87AEA61C1982BA00AA8519 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,14 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C8288121C3257FD00D82F1B /* OBCConvertor */ = {
+		8C82882E1C34D00E00D82F1B /* ASConvertor */ = {
 			isa = PBXGroup;
 			children = (
-				8C8288131C3257FD00D82F1B /* ASConvertor.h */,
-				8C8288141C3257FD00D82F1B /* ASConvertor.m */,
-				8C8288151C3257FD00D82F1B /* ts.tab */,
+				8C82882F1C34D00E00D82F1B /* ASConvertor.h */,
+				8C8288301C34D00E00D82F1B /* ASConvertor.m */,
+				8C8288311C34D00E00D82F1B /* ts.tab */,
 			);
-			path = OBCConvertor;
+			path = ASConvertor;
 			sourceTree = "<group>";
 		};
 		8C87AE991C1982BA00AA8519 = {
@@ -73,7 +73,7 @@
 		8C87AEA41C1982BA00AA8519 /* ReadChinese */ = {
 			isa = PBXGroup;
 			children = (
-				8C8288121C3257FD00D82F1B /* OBCConvertor */,
+				8C82882E1C34D00E00D82F1B /* ASConvertor */,
 				8CE3AA021C1EBBE80088E5EC /* screenshots */,
 				8C87AEA51C1982BA00AA8519 /* AppDelegate.h */,
 				8C87AEA61C1982BA00AA8519 /* AppDelegate.m */,
@@ -161,8 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C87AEAF1C1982BA00AA8519 /* Assets.xcassets in Resources */,
-				8C8288171C3257FD00D82F1B /* ts.tab in Resources */,
 				8C87AEB21C1982BA00AA8519 /* Main.storyboard in Resources */,
+				8C8288331C34D00E00D82F1B /* ts.tab in Resources */,
 				8C8288191C32681E00D82F1B /* screenshot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,8 +176,8 @@
 			files = (
 				8C87AEAD1C1982BA00AA8519 /* ViewController.m in Sources */,
 				8C87AEAA1C1982BA00AA8519 /* main.m in Sources */,
+				8C8288321C34D00E00D82F1B /* ASConvertor.m in Sources */,
 				8C87AEA71C1982BA00AA8519 /* AppDelegate.m in Sources */,
-				8C8288161C3257FD00D82F1B /* ASConvertor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
