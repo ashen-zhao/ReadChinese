@@ -85,12 +85,12 @@
     NSMutableArray *files = [NSMutableArray arrayWithCapacity:42];
     
     NSString *filename ;
+    NSArray *extension = @[@"m", @"h"];
     while (filename = [direnum nextObject]) {
-        if ([[filename pathExtension] isEqualToString:@"m"]) {
-            [files addObject: filename];
-        }
-        if ([[filename pathExtension] isEqualToString:@"h"]) {
-            [files addObject: filename];
+        for (NSString *ext in extension) {
+            if ([[filename pathExtension] isEqualToString:ext]) {
+                [files addObject: filename];
+            }
         }
     }
     NSEnumerator *fileenum;
