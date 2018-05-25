@@ -92,7 +92,7 @@
     NSMutableArray *xmlFiles = [NSMutableArray arrayWithCapacity:42];
     
     NSString *filename ;
-    NSArray *extension = @[];
+    NSArray *extension = @[@"m", @"h"];
     NSArray *xmlExtension = @[@"storyboard", @"xib"];
     while (filename = [direnum nextObject]) {
         if ([extension containsObject:filename.pathExtension]) {
