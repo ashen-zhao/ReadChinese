@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -656,6 +657,9 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="Aa0-j0-5yd"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -748,20 +752,18 @@
                                 </connections>
                             </button>
                             <scrollView borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ux9-mr-W0u">
-                                <rect key="frame" x="20" y="42" width="660" height="293"/>
+                                <rect key="frame" x="20" y="42" width="660" height="268"/>
                                 <clipView key="contentView" id="euw-pb-Ayw">
-                                    <rect key="frame" x="2" y="2" width="656" height="289"/>
+                                    <rect key="frame" x="2" y="2" width="656" height="264"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="sW7-4X-xdq">
-                                            <rect key="frame" x="0.0" y="0.0" width="656" height="289"/>
+                                        <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="sW7-4X-xdq">
+                                            <rect key="frame" x="0.0" y="0.0" width="656" height="264"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="656" height="289"/>
+                                            <size key="minSize" width="656" height="264"/>
                                             <size key="maxSize" width="678" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="656" height="289"/>
-                                            <size key="maxSize" width="678" height="10000000"/>
                                         </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -771,12 +773,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="GWr-T2-ntR">
-                                    <rect key="frame" x="642" y="2" width="16" height="289"/>
+                                    <rect key="frame" x="642" y="2" width="16" height="264"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="baO-zw-g7h">
-                                <rect key="frame" x="74" y="371" width="547" height="35"/>
+                                <rect key="frame" x="74" y="346" width="547" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="j6l-k4-q97"/>
                                 </constraints>
@@ -839,6 +841,17 @@
                                     <font key="font" size="13" name="STHeitiSC-Light"/>
                                 </buttonCell>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="KMD-XB-cC2">
+                                <rect key="frame" x="78" y="388" width="173" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="osZ-dX-7XJ"/>
+                                    <constraint firstAttribute="width" constant="169" id="zTH-Zg-yEQ"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="包含Storyboard及xib文件" bezelStyle="regularSquare" imagePosition="left" inset="2" id="aUl-rO-s60">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ux9-mr-W0u" secondAttribute="bottom" constant="42" id="2D6-JS-zCt"/>
@@ -849,15 +862,17 @@
                             <constraint firstItem="baO-zw-g7h" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="80" id="8oi-i8-MLS"/>
                             <constraint firstItem="8Um-Eo-OsS" firstAttribute="top" secondItem="r6h-1u-lqi" secondAttribute="bottom" constant="20" id="BNw-n6-3jO"/>
                             <constraint firstAttribute="trailing" secondItem="9Lq-Gk-6qn" secondAttribute="trailing" constant="20" id="Bxm-rc-19d"/>
+                            <constraint firstItem="KMD-XB-cC2" firstAttribute="leading" secondItem="y72-Q7-Ivt" secondAttribute="leading" id="Cut-LD-A2G"/>
                             <constraint firstItem="tF2-uS-4km" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="DRJ-d8-IYz"/>
                             <constraint firstItem="dOt-AI-Ebe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Flq-dc-mad"/>
-                            <constraint firstItem="baO-zw-g7h" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="50" id="HUx-AE-LrH"/>
+                            <constraint firstItem="baO-zw-g7h" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="75" id="HUx-AE-LrH"/>
                             <constraint firstItem="y72-Q7-Ivt" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="17" id="Khz-Gz-JKE"/>
                             <constraint firstAttribute="trailing" secondItem="baO-zw-g7h" secondAttribute="trailing" constant="85" id="Kmj-vd-ba1"/>
                             <constraint firstItem="PTq-tW-yeo" firstAttribute="leading" secondItem="y72-Q7-Ivt" secondAttribute="trailing" constant="36" id="L62-1Q-hqI"/>
                             <constraint firstItem="PTq-tW-yeo" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="17" id="O0s-t1-N8S"/>
                             <constraint firstItem="2X0-ky-X1i" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="17" id="O3O-Gs-55F"/>
                             <constraint firstItem="ux9-mr-W0u" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ObU-G1-O5N"/>
+                            <constraint firstItem="KMD-XB-cC2" firstAttribute="top" secondItem="dOt-AI-Ebe" secondAttribute="bottom" constant="13" id="QDQ-1X-TBk"/>
                             <constraint firstItem="dOt-AI-Ebe" firstAttribute="top" secondItem="8Um-Eo-OsS" secondAttribute="bottom" constant="16" id="U1Y-Z4-Hh3"/>
                             <constraint firstItem="r6h-1u-lqi" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="aQI-vF-iXx"/>
                             <constraint firstItem="9Lq-Gk-6qn" firstAttribute="leading" secondItem="8Um-Eo-OsS" secondAttribute="trailing" constant="10" id="ch6-a9-yyu"/>
@@ -875,6 +890,7 @@
                     <connections>
                         <outlet property="deleteInAllFiles" destination="y72-Q7-Ivt" id="6cU-UN-5G9"/>
                         <outlet property="deleteInOneFile" destination="PTq-tW-yeo" id="swr-lz-eGP"/>
+                        <outlet property="includeXMLFiles" destination="KMD-XB-cC2" id="ps5-cT-OQW"/>
                         <outlet property="tradition" destination="2X0-ky-X1i" id="5h3-IK-ikL"/>
                         <outlet property="txtShowChinese" destination="ux9-mr-W0u" id="GyR-Oo-cll"/>
                         <outlet property="txtShowOutPath" destination="8Um-Eo-OsS" id="5B9-kC-itm"/>
@@ -883,7 +899,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="744"/>
+            <point key="canvasLocation" x="74" y="851"/>
         </scene>
     </scenes>
 </document>
